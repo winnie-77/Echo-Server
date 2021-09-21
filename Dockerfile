@@ -7,8 +7,8 @@ COPY . .
 RUN npm run build
 
 FROM node:lts-alpine
-ENV BUILD=some_build_4
-ENV TEST_STR=TEST_1
+ENV BUILD=some_build_5
+ENV TEST_STR=TEST_2
 WORKDIR /app
 COPY --from=build /build/src/global.json .
 COPY --from=build /build/dist/webserver.js .

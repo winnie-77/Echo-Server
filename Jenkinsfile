@@ -9,7 +9,7 @@ pipeline {
         stage('Build & Push') {
             steps {
                 sh "docker info"
-                sh "docker buildx build --platform ${PLATFORMS} -t ${ECR_REPO}/${ECR_REPO_NAME}:${BUILD_NUMBER} . --push"
+                sh "docker buildx build --platform ${PLATFORMS} -t ${ECR_REPO}/${ECR_REPO_NAME}:${BUILD_NUMBER} -t ${ECR_REPO}/${ECR_REPO_NAME}:latest . --push"
             }
         }
     }
